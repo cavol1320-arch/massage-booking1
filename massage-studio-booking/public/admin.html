@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking Administration</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/admin.js" defer></script>
+  <style>
+    body { padding: 40px clamp(18px, 5vw, 70px); }
+    .admin-header { display:flex; justify-content:space-between; gap:20px; align-items:end; }
+    .admin-header h1 { font-size:clamp(2.4rem,6vw,5rem); }
+    .table-wrap { overflow:auto; background:white; border:1px solid var(--line); border-radius:18px; }
+    table { width:100%; border-collapse:collapse; min-width:1000px; }
+    th, td { padding:14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:#f1eee6; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+    select { min-width:130px; padding:8px; }
+    .muted { color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="admin-header">
+    <div>
+      <p class="eyebrow">Private dashboard</p>
+      <h1>Appointments</h1>
+    </div>
+    <a href="/">Back to website</a>
+  </div>
+  <p id="admin-message" class="form-message" aria-live="polite"></p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th><th>Time</th><th>Client</th><th>Contact</th>
+          <th>Treatment</th><th>Notes</th><th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="bookings-body"></tbody>
+    </table>
+  </div>
+</body>
+</html>
