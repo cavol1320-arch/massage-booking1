@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stillwater Massage Studio | Book an Appointment</title>
+  <meta name="description" content="Book a professional massage appointment online.">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <a class="brand" href="/">Stillwater Massage Studio</a>
+      <a class="nav-link" href="#booking">Book now</a>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">Professional massage therapy</p>
+      <h1>Make space for calm.</h1>
+      <p class="hero-copy">
+        Personalized treatments designed to reduce tension, support recovery,
+        and help you feel at home in your body.
+      </p>
+      <a class="button button-primary" href="#booking">Book your session</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">A thoughtful approach</p>
+        <h2>Massage tailored to what your body needs today.</h2>
+      </div>
+      <p>
+        Every appointment begins with a short consultation. Pressure, focus
+        areas, and treatment style are adjusted to your comfort and goals.
+      </p>
+    </section>
+
+    <section class="booking-section" id="booking">
+      <div class="booking-copy">
+        <p class="eyebrow">Online booking</p>
+        <h2>Reserve your appointment</h2>
+        <p>Select a treatment, choose an available time, and enter your details.</p>
+        <div class="studio-details">
+          <strong>Opening hours</strong>
+          <span>Monday–Thursday: 9:00–18:30</span>
+          <span>Friday: 9:00–17:00</span>
+          <span>Saturday: 9:00–15:30</span>
+          <span>Sunday: Closed</span>
+        </div>
+      </div>
+
+      <form id="booking-form" class="booking-card">
+        <label>
+          Treatment
+          <select id="service" name="serviceId" required>
+            <option value="">Choose a treatment</option>
+          </select>
+        </label>
+
+        <div class="two-columns">
+          <label>
+            Date
+            <input id="date" name="date" type="date" required>
+          </label>
+          <label>
+            Available time
+            <select id="time" name="time" required disabled>
+              <option value="">Choose a date first</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Full name
+          <input name="name" type="text" autocomplete="name" maxlength="120" required>
+        </label>
+
+        <div class="two-columns">
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" maxlength="180" required>
+          </label>
+          <label>
+            Phone
+            <input name="phone" type="tel" autocomplete="tel" maxlength="40" required>
+          </label>
+        </div>
+
+        <label>
+          Notes or requests <span class="optional">(optional)</span>
+          <textarea name="notes" rows="4" maxlength="1000"
+            placeholder="Areas of tension, preferred pressure, or anything we should know"></textarea>
+        </label>
+
+        <label class="checkbox-row">
+          <input id="privacy" name="privacy" type="checkbox" required>
+          <span>I consent to the use of my details to manage this appointment.</span>
+        </label>
+
+        <button class="button button-primary full-width" type="submit">
+          Confirm appointment
+        </button>
+
+        <p id="form-message" class="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Stillwater Massage Studio</span>
+    <span>Appointments by reservation</span>
+  </footer>
+</body>
+</html>

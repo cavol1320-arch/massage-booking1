@@ -1,0 +1,145 @@
+:root {
+  --ink: #26342f;
+  --muted: #68766f;
+  --cream: #f7f3eb;
+  --paper: #fffdf8;
+  --sage: #819789;
+  --sage-dark: #536a5c;
+  --line: #dcd9d0;
+  --error: #9c3c35;
+  --success: #356849;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+}
+a { color: inherit; }
+.hero {
+  min-height: 72vh;
+  padding: 24px clamp(24px, 6vw, 90px);
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(90deg, rgba(247,243,235,.97) 0%, rgba(247,243,235,.82) 52%, rgba(247,243,235,.25) 100%),
+    radial-gradient(circle at 82% 40%, #aab8ac 0, #71877a 32%, #41564b 68%, #2c3d35 100%);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.nav-link {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.hero-content {
+  width: min(650px, 100%);
+  margin: auto 0;
+  padding: 70px 0;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .72rem;
+  font-weight: 800;
+  color: var(--sage-dark);
+}
+h1, h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 12px 0 22px;
+}
+h1 { font-size: clamp(3.3rem, 8vw, 7rem); max-width: 780px; }
+h2 { font-size: clamp(2.2rem, 5vw, 4.3rem); }
+.hero-copy { max-width: 580px; font-size: 1.13rem; color: #45564e; margin-bottom: 32px; }
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 0;
+  font: inherit;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button-primary { background: var(--sage-dark); color: white; }
+.button-primary:hover { background: #3f5548; }
+.intro {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 60px;
+  padding: 100px clamp(24px, 8vw, 130px);
+  background: var(--paper);
+}
+.intro p:last-child { max-width: 540px; font-size: 1.08rem; color: var(--muted); align-self: center; }
+.booking-section {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 70px;
+  padding: 100px clamp(24px, 8vw, 130px);
+}
+.booking-copy { position: sticky; top: 35px; align-self: start; }
+.studio-details { margin-top: 32px; display: grid; gap: 5px; color: var(--muted); }
+.studio-details strong { color: var(--ink); margin-bottom: 5px; }
+.booking-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: clamp(22px, 5vw, 46px);
+  box-shadow: 0 24px 80px rgba(38, 52, 47, .08);
+}
+label { display: grid; gap: 8px; font-weight: 700; margin-bottom: 19px; }
+input, select, textarea {
+  width: 100%;
+  border: 1px solid #c9cdc7;
+  border-radius: 12px;
+  background: white;
+  color: var(--ink);
+  padding: 13px 14px;
+  font: inherit;
+}
+input:focus, select:focus, textarea:focus {
+  outline: 3px solid rgba(129,151,137,.23);
+  border-color: var(--sage);
+}
+.two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.optional { color: var(--muted); font-weight: 500; }
+.checkbox-row {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  font-weight: 500;
+}
+.checkbox-row input { width: 18px; margin-top: 4px; }
+.full-width { width: 100%; }
+.form-message { min-height: 24px; margin: 15px 0 0; font-weight: 700; }
+.form-message.error { color: var(--error); }
+.form-message.success { color: var(--success); }
+footer {
+  padding: 28px clamp(24px, 8vw, 130px);
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+@media (max-width: 800px) {
+  .intro, .booking-section { grid-template-columns: 1fr; gap: 35px; }
+  .booking-copy { position: static; }
+  .two-columns { grid-template-columns: 1fr; gap: 0; }
+  footer { flex-direction: column; gap: 5px; }
+}
