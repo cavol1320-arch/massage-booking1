@@ -31,3 +31,7 @@ Non modificare o eliminare le variabili Railway esistenti:
 - `ADMIN_USERNAME`
 - `ADMIN_PASSWORD`
 - `NODE_ENV`
+
+
+## Gmail e Google Calendar
+Segui `GOOGLE_SETUP.md` per attivare le notifiche e il calendario automatico.

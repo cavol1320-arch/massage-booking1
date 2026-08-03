@@ -104,6 +104,43 @@ function localDate(value) {
   return new Date(year, month - 1, day);
 }
 
+
+async function sendGoogleNotification(payload) {
+  const webhookUrl = process.env.GOOGLE_APPS_SCRIPT_URL;
+  const secret = process.env.GOOGLE_APPS_SCRIPT_SECRET;
+
+  if (!webhookUrl || !secret) {
+    console.warn("Google notification integration is not configured.");
+    return { configured: false };
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+
+  try {
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      redirect: "follow",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...payload, secret }),
+      signal: controller.signal
+    });
+
+    const responseText = await response.text();
+    let result = {};
+    try { result = JSON.parse(responseText); }
+    catch { result = { raw: responseText }; }
+
+    if (!response.ok || result.ok === false) {
+      throw new Error(result.error || `Google webhook returned ${response.status}`);
+    }
+
+    return { configured: true, ok: true, result };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 app.get("/api/services", (_req, res) => {
   res.json(SERVICES);
 });
@@ -197,9 +234,31 @@ app.post("/api/bookings", async (req, res, next) => {
       ]
     );
 
+    let notificationSent = false;
+
+    try {
+      const notification = await sendGoogleNotification({
+        bookingId: id,
+        service: serviceName,
+        duration: service.duration,
+        price: service.price,
+        date,
+        time,
+        customerName: name,
+        customerEmail: email,
+        customerPhone: phone,
+        notes,
+        language
+      });
+      notificationSent = notification.configured && notification.ok === true;
+    } catch (notificationError) {
+      console.error("Google notification failed:", notificationError);
+    }
+
     res.status(201).json({
       message: messages.success,
-      booking: { id, service: serviceName, date, time }
+      booking: { id, service: serviceName, date, time },
+      notificationSent
     });
   } catch (error) {
     if (error.code === "23505") {
