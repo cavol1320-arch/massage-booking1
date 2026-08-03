@@ -35,3 +35,4 @@ Non eliminare PostgreSQL e non modificare le variabili già presenti su Railway.
 - Inserito dato di oltre 200 clienti trattati.
 - Corretta l’inquadratura della foto sportiva.
 - Migliorata la sezione professionale e la resa mobile.
+- Aggiornamento versione 2.2
