@@ -19,3 +19,4 @@ Non eliminare PostgreSQL e non modificare le variabili già presenti su Railway.
 - Lunedì–Sabato 09:00–19:00
 - 30 minuti €30 / 50 minuti €50
 - Italiano e inglese
+aggiornamento sito sportivo
