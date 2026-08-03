@@ -1,12 +1,11 @@
 {
-  "name": "massage-studio-booking",
-  "version": "1.0.0",
+  "name": "studio-massage-limena",
+  "version": "2.0.0",
   "private": true,
-  "description": "A clean massage studio booking app ready for Railway.",
+  "description": "Bilingual sports massage booking website for Studio Massage Limena.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node server.js"
   },
   "engines": {
     "node": ">=20"
