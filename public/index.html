@@ -4,8 +4,8 @@
 <meta name="description" content="Massaggio sportivo, decontratturante e rilassante a Limena. Prenota online con un Massaggiatore Sportivo FIGC.">
 <link rel="stylesheet" href="/styles.css"><script defer src="/app.js"></script></head>
 <body>
-<header>
-<a href="#home"><img src="/images/logo.jpg" alt="Studio Massage"></a>
+<header class="site-header">
+<a class="brand" href="#home" aria-label="Studio Massage home"><img src="/images/logo.png" alt="Studio Massage"></a>
 <nav><a href="#about" data-it="Chi sono" data-en="About">Chi sono</a><a href="#treatments" data-it="Trattamenti" data-en="Treatments">Trattamenti</a><a href="#booking" data-it="Prenota" data-en="Book">Prenota</a><a href="#contact" data-it="Contatti" data-en="Contact">Contatti</a></nav>
 <button id="lang">EN</button>
 </header>
@@ -20,20 +20,52 @@ data-en="Professional treatments for athletes, active people and anyone seeking 
 <div><a class="btn primary" href="#booking" data-it="Prenota ora" data-en="Book now">Prenota ora</a><a class="btn ghost" href="https://wa.me/393807666090" target="_blank">WhatsApp</a></div>
 </div></section>
 
-<section class="numbers"><div><b>FIGC</b><span data-it="Qualifica sportiva" data-en="Sports qualification">Qualifica sportiva</span></div><div><b>30'</b><span>€30</span></div><div><b>50'</b><span>€50</span></div><div><b>6/7</b><span data-it="Lun–Sab" data-en="Mon–Sat">Lun–Sab</span></div></section>
+<section class="numbers credibility">
+      <div><b>200+</b><span data-it="Clienti trattati" data-en="Clients treated">Clienti trattati</span></div>
+      <div><b>FIGC</b><span data-it="Massaggiatore Sportivo" data-en="Sports Massage Therapist">Massaggiatore Sportivo</span></div>
+      <div><b>5★</b><span data-it="Hotel ad Abano Terme" data-en="Hotels in Abano Terme">Hotel ad Abano Terme</span></div>
+      <div><b>GIRO</b><span data-it="Ciclisti trattati" data-en="Cyclists treated">Ciclisti trattati</span></div>
+      <div><b>CALCIO</b><span data-it="Società sportive" data-en="Football clubs">Società sportive</span></div>
+    </section>
 
 <section class="about section" id="about">
-<img src="/images/portrait.jpg" alt="Nicolas, Massaggiatore Sportivo FIGC">
-<div><p class="eyebrow dark" data-it="IL PROFESSIONISTA" data-en="THE PROFESSIONAL">IL PROFESSIONISTA</p>
-<h2 data-it="Tecnica, ascolto e attenzione agli obiettivi." data-en="Technique, listening and attention to your goals.">Tecnica, ascolto e attenzione agli obiettivi.</h2>
-<p data-it="Sono Nicolas, Massaggiatore Sportivo FIGC. Lavoro con sportivi e persone di ogni età per favorire il recupero muscolare, ridurre le tensioni e migliorare la qualità del movimento."
-data-en="I am Nicolas, a FIGC Sports Massage Therapist. I work with athletes and people of all ages to support muscular recovery, reduce tension and improve movement quality.">Sono Nicolas, Massaggiatore Sportivo FIGC. Lavoro con sportivi e persone di ogni età per favorire il recupero muscolare, ridurre le tensioni e migliorare la qualità del movimento.</p>
-<ul><li data-it="Trattamenti personalizzati" data-en="Personalized treatments">Trattamenti personalizzati</li><li data-it="Approccio orientato al recupero" data-en="Recovery-focused approach">Approccio orientato al recupero</li><li data-it="Studio professionale a Limena" data-en="Professional studio in Limena">Studio professionale a Limena</li></ul></div>
-</section>
+      <div class="portrait-wrap">
+        <img src="/images/portrait.jpg" alt="Nicolas, Massaggiatore Sportivo FIGC">
+        <div class="portrait-badge">
+          <strong>200+</strong>
+          <span data-it="clienti trattati" data-en="clients treated">clienti trattati</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p class="eyebrow dark" data-it="IL PROFESSIONISTA" data-en="THE PROFESSIONAL">IL PROFESSIONISTA</p>
+        <h2 data-it="Tecnica, esperienza e attenzione agli obiettivi."
+            data-en="Technique, experience and attention to your goals.">
+          Tecnica, esperienza e attenzione agli obiettivi.
+        </h2>
+
+        <p data-it="Sono Nicolas, Massaggiatore Sportivo FIGC. Lavoro con sportivi, persone attive e clienti che desiderano recuperare mobilità, ridurre le tensioni e migliorare la qualità del movimento."
+           data-en="I am Nicolas, a FIGC Sports Massage Therapist. I work with athletes, active people and clients who want to recover mobility, reduce tension and improve movement quality.">
+          Sono Nicolas, Massaggiatore Sportivo FIGC. Lavoro con sportivi, persone attive e clienti che desiderano recuperare mobilità, ridurre le tensioni e migliorare la qualità del movimento.
+        </p>
+
+        <p data-it="Nel corso della mia esperienza ho lavorato con hotel 5 stelle ad Abano Terme, collaborato con società sportive di calcio e trattato anche ciclisti impegnati nel Giro d’Italia. Ho seguito oltre 200 clienti, costruendo ogni trattamento sulle esigenze e sugli obiettivi della singola persona."
+           data-en="During my experience I have worked with five-star hotels in Abano Terme, collaborated with football clubs and treated cyclists involved in the Giro d’Italia. I have worked with more than 200 clients, tailoring every treatment to the individual’s needs and goals.">
+          Nel corso della mia esperienza ho lavorato con hotel 5 stelle ad Abano Terme, collaborato con società sportive di calcio e trattato anche ciclisti impegnati nel Giro d’Italia. Ho seguito oltre 200 clienti, costruendo ogni trattamento sulle esigenze e sugli obiettivi della singola persona.
+        </p>
+
+        <div class="trust-list">
+          <div><span>01</span><strong data-it="Massaggiatore Sportivo FIGC" data-en="FIGC Sports Massage Therapist">Massaggiatore Sportivo FIGC</strong></div>
+          <div><span>02</span><strong data-it="Collaborazioni con hotel 5 stelle" data-en="Five-star hotel collaborations">Collaborazioni con hotel 5 stelle</strong></div>
+          <div><span>03</span><strong data-it="Esperienza con società di calcio" data-en="Experience with football clubs">Esperienza con società di calcio</strong></div>
+          <div><span>04</span><strong data-it="Esperienza con ciclisti del Giro d’Italia" data-en="Experience with Giro d’Italia cyclists">Esperienza con ciclisti del Giro d’Italia</strong></div>
+        </div>
+      </div>
+    </section>
 
 <section class="sport section"><div><p class="eyebrow">SPORT & RECOVERY</p><h2 data-it="Per chi si allena, compete e vuole continuare a rendere." data-en="For those who train, compete and want to keep performing.">Per chi si allena, compete e vuole continuare a rendere.</h2>
 <p data-it="Un lavoro mirato può accompagnare preparazione, scarico e recupero dopo allenamenti e gare."
-data-en="Targeted manual work can support preparation, release and recovery after training and competition.">Un lavoro mirato può accompagnare preparazione, scarico e recupero dopo allenamenti e gare.</p></div><img src="/images/sport.jpg" alt="Trattamento sportivo"></section>
+data-en="Targeted manual work can support preparation, release and recovery after training and competition.">Un lavoro mirato può accompagnare preparazione, scarico e recupero dopo allenamenti e gare.</p></div><div class="sport-image-wrap"><img src="/images/sport.jpg" alt="Trattamento sportivo"></div></section>
 
 <section class="treatments section" id="treatments"><p class="eyebrow dark" data-it="TRATTAMENTI" data-en="TREATMENTS">TRATTAMENTI</p>
 <div class="cards">
@@ -62,5 +94,5 @@ data-en="Targeted manual work can support preparation, release and recovery afte
 <a href="https://instagram.com/studiomassage.limena" target="_blank"><small>Instagram</small><b>@studiomassage.limena</b></a></div></section>
 </main>
 <a class="wa" href="https://wa.me/393807666090" target="_blank">WhatsApp</a>
-<footer><img src="/images/logo.jpg" alt="Studio Massage"><span>© <span id="year"></span> Studio Massage · Limena</span></footer>
+<footer><img src="/images/logo.png" alt="Studio Massage"><span>© <span id="year"></span> Studio Massage · Limena</span></footer>
 </body></html>

@@ -19,4 +19,19 @@ Non eliminare PostgreSQL e non modificare le variabili già presenti su Railway.
 - Lunedì–Sabato 09:00–19:00
 - 30 minuti €30 / 50 minuti €50
 - Italiano e inglese
-aggiornamento sito sportivo
+
+
+## Correzione 2.1
+- Logo ritagliato e convertito in PNG trasparente.
+- Barra superiore con altezza stabile.
+- Logo contenuto correttamente nella barra.
+- Migliorata la navigazione su desktop e smartphone.
+
+
+## Aggiornamento 2.2
+- Inserite esperienze con hotel 5 stelle ad Abano Terme.
+- Inserite collaborazioni con società sportive di calcio.
+- Inserita esperienza con ciclisti del Giro d’Italia.
+- Inserito dato di oltre 200 clienti trattati.
+- Corretta l’inquadratura della foto sportiva.
+- Migliorata la sezione professionale e la resa mobile.
