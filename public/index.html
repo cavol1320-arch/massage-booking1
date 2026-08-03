@@ -1,98 +1,295 @@
-<!doctype html><html lang="it"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Studio Massage Limena | Massaggiatore Sportivo FIGC</title>
-<meta name="description" content="Massaggio sportivo, decontratturante e rilassante a Limena. Prenota online con un Massaggiatore Sportivo FIGC.">
-<link rel="stylesheet" href="/styles.css"><script defer src="/app.js"></script></head>
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101512">
+  <title>Studio Massage Limena | Massaggiatore Sportivo FIGC</title>
+  <meta name="description" content="Massaggio sportivo, decontratturante e rilassante a Limena con un Massaggiatore Sportivo FIGC. Prenotazione online.">
+  <link rel="stylesheet" href="/styles.css?v=3">
+  <script src="/app.js?v=3" defer></script>
+</head>
 <body>
-<header class="site-header">
-<a class="brand" href="#home" aria-label="Studio Massage home"><img src="/images/logo.png" alt="Studio Massage"></a>
-<nav><a href="#about" data-it="Chi sono" data-en="About">Chi sono</a><a href="#treatments" data-it="Trattamenti" data-en="Treatments">Trattamenti</a><a href="#booking" data-it="Prenota" data-en="Book">Prenota</a><a href="#contact" data-it="Contatti" data-en="Contact">Contatti</a></nav>
-<button id="lang">EN</button>
-</header>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Studio Massage">
+      <img src="/images/logo.png" alt="Studio Massage">
+    </a>
 
-<main>
-<section class="hero" id="home">
-<div class="hero-bg"></div><div class="hero-copy">
-<p class="eyebrow">MASSAGGIATORE SPORTIVO FIGC</p>
-<h1 data-it="Recupera. Migliora. Riparti." data-en="Recover. Improve. Go again.">Recupera. Migliora. Riparti.</h1>
-<p data-it="Trattamenti professionali per sportivi, atleti e persone che vogliono ritrovare mobilità e benessere."
-data-en="Professional treatments for athletes, active people and anyone seeking better mobility and well-being.">Trattamenti professionali per sportivi, atleti e persone che vogliono ritrovare mobilità e benessere.</p>
-<div><a class="btn primary" href="#booking" data-it="Prenota ora" data-en="Book now">Prenota ora</a><a class="btn ghost" href="https://wa.me/393807666090" target="_blank">WhatsApp</a></div>
-</div></section>
+    <nav aria-label="Navigazione principale">
+      <a href="#about" data-it="Chi sono" data-en="About">Chi sono</a>
+      <a href="#treatments" data-it="Trattamenti" data-en="Treatments">Trattamenti</a>
+      <a href="#studio" data-it="Lo studio" data-en="Studio">Lo studio</a>
+      <a href="#booking" data-it="Prenota" data-en="Book">Prenota</a>
+      <a href="#contact" data-it="Contatti" data-en="Contact">Contatti</a>
+    </nav>
 
-<section class="numbers credibility">
-      <div><b>200+</b><span data-it="Clienti trattati" data-en="Clients treated">Clienti trattati</span></div>
-      <div><b>FIGC</b><span data-it="Massaggiatore Sportivo" data-en="Sports Massage Therapist">Massaggiatore Sportivo</span></div>
-      <div><b>5★</b><span data-it="Hotel ad Abano Terme" data-en="Hotels in Abano Terme">Hotel ad Abano Terme</span></div>
-      <div><b>GIRO</b><span data-it="Ciclisti trattati" data-en="Cyclists treated">Ciclisti trattati</span></div>
-      <div><b>CALCIO</b><span data-it="Società sportive" data-en="Football clubs">Società sportive</span></div>
+    <button id="language-toggle" class="language-toggle" type="button" aria-label="Change language">EN</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">MASSAGGIATORE SPORTIVO FIGC</p>
+        <h1 data-it="Recupera.<br>Migliora.<br>Riparti."
+            data-en="Recover.<br>Improve.<br>Go again.">
+          Recupera.<br>Migliora.<br>Riparti.
+        </h1>
+        <p class="hero-text"
+           data-it="Trattamenti professionali per sportivi, persone attive e per chi vuole ritrovare mobilità e benessere."
+           data-en="Professional treatments for athletes, active people and anyone seeking better mobility and well-being.">
+          Trattamenti professionali per sportivi, persone attive e per chi vuole ritrovare mobilità e benessere.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-accent" href="#booking" data-it="Prenota ora" data-en="Book now">Prenota ora</a>
+          <a class="button button-outline" href="https://wa.me/393807666090" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-proof">
+        <span data-it="ESPERIENZA CON" data-en="EXPERIENCE WITH">ESPERIENZA CON</span>
+        <strong data-it="Sportivi • Hotel 5★ • Società di calcio"
+                data-en="Athletes • 5-star hotels • Football clubs">
+          Sportivi • Hotel 5★ • Società di calcio
+        </strong>
+      </div>
     </section>
 
-<section class="about section" id="about">
-      <div class="portrait-wrap">
+    <section class="proof-strip" aria-label="Professional experience">
+      <div><strong>200+</strong><span data-it="Clienti trattati" data-en="Clients treated">Clienti trattati</span></div>
+      <div><strong>FIGC</strong><span data-it="Massaggiatore Sportivo" data-en="Sports Massage Therapist">Massaggiatore Sportivo</span></div>
+      <div><strong>5★</strong><span data-it="Hotel ad Abano Terme" data-en="Hotels in Abano Terme">Hotel ad Abano Terme</span></div>
+      <div><strong>GIRO</strong><span data-it="Ciclisti trattati" data-en="Cyclists treated">Ciclisti trattati</span></div>
+      <div><strong>CALCIO</strong><span data-it="Società sportive" data-en="Football clubs">Società sportive</span></div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="portrait">
         <img src="/images/portrait.jpg" alt="Nicolas, Massaggiatore Sportivo FIGC">
-        <div class="portrait-badge">
-          <strong>200+</strong>
-          <span data-it="clienti trattati" data-en="clients treated">clienti trattati</span>
+        <div class="portrait-label">
+          <strong>Nicolas</strong>
+          <span>Massaggiatore Sportivo FIGC</span>
         </div>
       </div>
 
-      <div class="about-content">
-        <p class="eyebrow dark" data-it="IL PROFESSIONISTA" data-en="THE PROFESSIONAL">IL PROFESSIONISTA</p>
+      <div class="about-copy">
+        <p class="eyebrow eyebrow-dark" data-it="IL PROFESSIONISTA" data-en="THE PROFESSIONAL">IL PROFESSIONISTA</p>
         <h2 data-it="Tecnica, esperienza e attenzione agli obiettivi."
             data-en="Technique, experience and attention to your goals.">
           Tecnica, esperienza e attenzione agli obiettivi.
         </h2>
 
-        <p data-it="Sono Nicolas, Massaggiatore Sportivo FIGC. Lavoro con sportivi, persone attive e clienti che desiderano recuperare mobilità, ridurre le tensioni e migliorare la qualità del movimento."
-           data-en="I am Nicolas, a FIGC Sports Massage Therapist. I work with athletes, active people and clients who want to recover mobility, reduce tension and improve movement quality.">
-          Sono Nicolas, Massaggiatore Sportivo FIGC. Lavoro con sportivi, persone attive e clienti che desiderano recuperare mobilità, ridurre le tensioni e migliorare la qualità del movimento.
+        <p data-it="Lavoro con sportivi, persone attive e clienti che desiderano recuperare mobilità, ridurre le tensioni e migliorare la qualità del movimento."
+           data-en="I work with athletes, active people and clients who want to recover mobility, reduce tension and improve movement quality.">
+          Lavoro con sportivi, persone attive e clienti che desiderano recuperare mobilità, ridurre le tensioni e migliorare la qualità del movimento.
         </p>
 
-        <p data-it="Nel corso della mia esperienza ho lavorato con hotel 5 stelle ad Abano Terme, collaborato con società sportive di calcio e trattato anche ciclisti impegnati nel Giro d’Italia. Ho seguito oltre 200 clienti, costruendo ogni trattamento sulle esigenze e sugli obiettivi della singola persona."
-           data-en="During my experience I have worked with five-star hotels in Abano Terme, collaborated with football clubs and treated cyclists involved in the Giro d’Italia. I have worked with more than 200 clients, tailoring every treatment to the individual’s needs and goals.">
-          Nel corso della mia esperienza ho lavorato con hotel 5 stelle ad Abano Terme, collaborato con società sportive di calcio e trattato anche ciclisti impegnati nel Giro d’Italia. Ho seguito oltre 200 clienti, costruendo ogni trattamento sulle esigenze e sugli obiettivi della singola persona.
+        <p data-it="Ho lavorato con hotel 5 stelle ad Abano Terme, collaborato con società sportive di calcio e trattato anche ciclisti impegnati nel Giro d’Italia. Ogni seduta viene costruita sulle esigenze e sugli obiettivi della singola persona."
+           data-en="I have worked with five-star hotels in Abano Terme, collaborated with football clubs and treated cyclists involved in the Giro d’Italia. Every session is tailored to the individual’s needs and goals.">
+          Ho lavorato con hotel 5 stelle ad Abano Terme, collaborato con società sportive di calcio e trattato anche ciclisti impegnati nel Giro d’Italia. Ogni seduta viene costruita sulle esigenze e sugli obiettivi della singola persona.
         </p>
 
-        <div class="trust-list">
+        <div class="credentials">
           <div><span>01</span><strong data-it="Massaggiatore Sportivo FIGC" data-en="FIGC Sports Massage Therapist">Massaggiatore Sportivo FIGC</strong></div>
-          <div><span>02</span><strong data-it="Collaborazioni con hotel 5 stelle" data-en="Five-star hotel collaborations">Collaborazioni con hotel 5 stelle</strong></div>
-          <div><span>03</span><strong data-it="Esperienza con società di calcio" data-en="Experience with football clubs">Esperienza con società di calcio</strong></div>
-          <div><span>04</span><strong data-it="Esperienza con ciclisti del Giro d’Italia" data-en="Experience with Giro d’Italia cyclists">Esperienza con ciclisti del Giro d’Italia</strong></div>
+          <div><span>02</span><strong data-it="Oltre 200 clienti trattati" data-en="Over 200 clients treated">Oltre 200 clienti trattati</strong></div>
+          <div><span>03</span><strong data-it="Hotel 5 stelle ad Abano Terme" data-en="Five-star hotels in Abano Terme">Hotel 5 stelle ad Abano Terme</strong></div>
+          <div><span>04</span><strong data-it="Esperienza nel calcio e nel ciclismo" data-en="Football and cycling experience">Esperienza nel calcio e nel ciclismo</strong></div>
         </div>
       </div>
     </section>
 
-<section class="sport section"><div><p class="eyebrow">SPORT & RECOVERY</p><h2 data-it="Per chi si allena, compete e vuole continuare a rendere." data-en="For those who train, compete and want to keep performing.">Per chi si allena, compete e vuole continuare a rendere.</h2>
-<p data-it="Un lavoro mirato può accompagnare preparazione, scarico e recupero dopo allenamenti e gare."
-data-en="Targeted manual work can support preparation, release and recovery after training and competition.">Un lavoro mirato può accompagnare preparazione, scarico e recupero dopo allenamenti e gare.</p></div><div class="sport-image-wrap"><img src="/images/sport.jpg" alt="Trattamento sportivo"></div></section>
+    <section class="section performance">
+      <div class="performance-copy">
+        <p class="eyebrow">SPORT &amp; RECOVERY</p>
+        <h2 data-it="Per chi si allena, compete e vuole continuare a rendere."
+            data-en="For those who train, compete and want to keep performing.">
+          Per chi si allena, compete e vuole continuare a rendere.
+        </h2>
+        <p data-it="Un trattamento mirato può accompagnare la preparazione, lo scarico e il recupero dopo allenamenti e gare."
+           data-en="A targeted treatment can support preparation, release and recovery after training and competition.">
+          Un trattamento mirato può accompagnare la preparazione, lo scarico e il recupero dopo allenamenti e gare.
+        </p>
+        <div class="sport-tags" aria-label="Sports">
+          <span>Calcio</span><span>Running</span><span>Ciclismo</span>
+          <span>Padel</span><span>Palestra</span><span>Cross training</span>
+        </div>
+      </div>
 
-<section class="treatments section" id="treatments"><p class="eyebrow dark" data-it="TRATTAMENTI" data-en="TREATMENTS">TRATTAMENTI</p>
-<div class="cards">
-<article class="featured"><small>01</small><h3 data-it="Massaggio Sportivo" data-en="Sports Massage">Massaggio Sportivo</h3><p data-it="Preparazione, scarico e recupero muscolare prima o dopo l’attività fisica." data-en="Preparation, release and muscular recovery before or after activity.">Preparazione, scarico e recupero muscolare prima o dopo l’attività fisica.</p><strong>30 min €30 · 50 min €50</strong></article>
-<article><small>02</small><h3 data-it="Massaggio Decontratturante" data-en="Deep Tissue Massage">Massaggio Decontratturante</h3><p data-it="Per tensioni, rigidità e zone sovraccaricate, con intensità personalizzata." data-en="For tension, stiffness and overloaded areas, with personalized intensity.">Per tensioni, rigidità e zone sovraccaricate, con intensità personalizzata.</p><strong>30 min €30 · 50 min €50</strong></article>
-<article><small>03</small><h3 data-it="Massaggio Rilassante" data-en="Relaxing Massage">Massaggio Rilassante</h3><p data-it="Per ridurre stress e affaticamento e ritrovare una sensazione di leggerezza." data-en="To reduce stress and fatigue and regain a sense of lightness.">Per ridurre stress e affaticamento e ritrovare una sensazione di leggerezza.</p><strong>30 min €30 · 50 min €50</strong></article>
-</div></section>
+      <div class="performance-image">
+        <img src="/images/sport.jpg" alt="Massaggiatore con attrezzatura sportiva">
+      </div>
+    </section>
 
-<section class="gallery section"><img src="/images/studio.jpg" alt="Studio Massage Limena"><img src="/images/treatment.jpg" alt="Trattamento manuale"><div><p class="eyebrow dark" data-it="LO STUDIO" data-en="THE STUDIO">LO STUDIO</p><h2 data-it="Un ambiente riservato, curato e professionale." data-en="A private, welcoming and professional setting.">Un ambiente riservato, curato e professionale.</h2></div></section>
+    <section class="section treatments" id="treatments">
+      <div class="section-heading">
+        <p class="eyebrow eyebrow-dark" data-it="TRATTAMENTI" data-en="TREATMENTS">TRATTAMENTI</p>
+        <h2 data-it="Il trattamento giusto per il tuo momento."
+            data-en="The right treatment for where you are now.">
+          Il trattamento giusto per il tuo momento.
+        </h2>
+      </div>
 
-<section class="booking section" id="booking"><div><p class="eyebrow">PRENOTAZIONE ONLINE</p><h2 data-it="Scegli il trattamento e l’orario." data-en="Choose your treatment and time.">Scegli il trattamento e l’orario.</h2><p data-it="Lunedì–Sabato, 09:00–19:00. Domenica chiuso." data-en="Monday–Saturday, 09:00–19:00. Sunday closed.">Lunedì–Sabato, 09:00–19:00. Domenica chiuso.</p></div>
-<form id="booking-form">
-<label><span data-it="Trattamento e durata" data-en="Treatment and duration">Trattamento e durata</span><select id="service" name="serviceId" required></select></label>
-<div class="two"><label><span data-it="Data" data-en="Date">Data</span><input id="date" name="date" type="date" required></label><label><span data-it="Orario" data-en="Time">Orario</span><select id="time" name="time" required disabled></select></label></div>
-<label><span data-it="Nome e cognome" data-en="Full name">Nome e cognome</span><input name="name" required></label>
-<div class="two"><label>Email<input name="email" type="email" required></label><label><span data-it="Telefono" data-en="Phone">Telefono</span><input name="phone" required></label></div>
-<label><span data-it="Note o richieste" data-en="Notes or requests">Note o richieste</span><textarea name="notes" rows="4"></textarea></label>
-<label class="check"><input id="privacy" type="checkbox" required><span data-it="Acconsento all’utilizzo dei dati per gestire la prenotazione." data-en="I consent to the use of my data to manage this booking.">Acconsento all’utilizzo dei dati per gestire la prenotazione.</span></label>
-<button class="btn primary full" type="submit" data-it="Conferma prenotazione" data-en="Confirm booking">Conferma prenotazione</button><p id="message"></p>
-</form></section>
+      <div class="treatment-grid">
+        <article class="treatment-card treatment-featured">
+          <span class="card-number">01</span>
+          <p class="card-label">PERFORMANCE</p>
+          <h3 data-it="Massaggio Sportivo" data-en="Sports Massage">Massaggio Sportivo</h3>
+          <p data-it="Per preparazione, scarico e recupero muscolare prima o dopo l’attività fisica."
+             data-en="For preparation, release and muscular recovery before or after physical activity.">
+            Per preparazione, scarico e recupero muscolare prima o dopo l’attività fisica.
+          </p>
+          <strong>30 min — €30<br>50 min — €50</strong>
+        </article>
 
-<section class="contact section" id="contact"><div><p class="eyebrow dark">STUDIO MASSAGE LIMENA</p><h2 data-it="Allenati. Recupera. Riparti." data-en="Train. Recover. Go again.">Allenati. Recupera. Riparti.</h2></div><div class="links">
-<a href="https://maps.google.com/?q=Via+Piazza+Diaz+10+Limena" target="_blank"><small data-it="Indirizzo" data-en="Address">Indirizzo</small><b>Via Piazza Diaz 10, Limena</b></a>
-<a href="tel:+393807666090"><small data-it="Telefono" data-en="Phone">Telefono</small><b>380 766 6090</b></a>
-<a href="mailto:studiomassagelimena@gmail.com"><small>Email</small><b>studiomassagelimena@gmail.com</b></a>
-<a href="https://instagram.com/studiomassage.limena" target="_blank"><small>Instagram</small><b>@studiomassage.limena</b></a></div></section>
-</main>
-<a class="wa" href="https://wa.me/393807666090" target="_blank">WhatsApp</a>
-<footer><img src="/images/logo.png" alt="Studio Massage"><span>© <span id="year"></span> Studio Massage · Limena</span></footer>
-</body></html>
+        <article class="treatment-card">
+          <span class="card-number">02</span>
+          <p class="card-label">MOBILITY</p>
+          <h3 data-it="Massaggio Decontratturante" data-en="Deep Tissue Massage">Massaggio Decontratturante</h3>
+          <p data-it="Per tensioni, rigidità e zone sovraccaricate, con intensità personalizzata."
+             data-en="For tension, stiffness and overloaded areas, with personalized intensity.">
+            Per tensioni, rigidità e zone sovraccaricate, con intensità personalizzata.
+          </p>
+          <strong>30 min — €30<br>50 min — €50</strong>
+        </article>
+
+        <article class="treatment-card">
+          <span class="card-number">03</span>
+          <p class="card-label">WELLNESS</p>
+          <h3 data-it="Massaggio Rilassante" data-en="Relaxing Massage">Massaggio Rilassante</h3>
+          <p data-it="Per ridurre stress e affaticamento e ritrovare una sensazione di leggerezza."
+             data-en="To reduce stress and fatigue and regain a sense of lightness.">
+            Per ridurre stress e affaticamento e ritrovare una sensazione di leggerezza.
+          </p>
+          <strong>30 min — €30<br>50 min — €50</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section studio" id="studio">
+      <div class="studio-heading">
+        <p class="eyebrow eyebrow-dark" data-it="LO STUDIO" data-en="THE STUDIO">LO STUDIO</p>
+        <h2 data-it="Un ambiente riservato, curato e professionale."
+            data-en="A private, welcoming and professional setting.">
+          Un ambiente riservato, curato e professionale.
+        </h2>
+      </div>
+
+      <div class="studio-gallery">
+        <figure class="studio-main"><img src="/images/studio.jpg" alt="Studio Massage a Limena"></figure>
+        <figure><img src="/images/treatment.jpg" alt="Trattamento manuale professionale"></figure>
+      </div>
+    </section>
+
+    <section class="section booking" id="booking">
+      <div class="booking-copy">
+        <p class="eyebrow">PRENOTAZIONE ONLINE</p>
+        <h2 data-it="Scegli il trattamento e l’orario."
+            data-en="Choose your treatment and time.">
+          Scegli il trattamento e l’orario.
+        </h2>
+        <p data-it="Aperto dal lunedì al sabato, dalle 09:00 alle 19:00. Domenica chiuso."
+           data-en="Open Monday to Saturday, from 09:00 to 19:00. Closed on Sunday.">
+          Aperto dal lunedì al sabato, dalle 09:00 alle 19:00. Domenica chiuso.
+        </p>
+        <div class="booking-contact">
+          <a href="tel:+393807666090">380 766 6090</a>
+          <a href="https://wa.me/393807666090" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <form id="booking-form" class="booking-form">
+        <label>
+          <span data-it="Trattamento e durata" data-en="Treatment and duration">Trattamento e durata</span>
+          <select id="service" name="serviceId" required>
+            <option value="">Scegli trattamento e durata</option>
+          </select>
+        </label>
+
+        <div class="form-columns">
+          <label>
+            <span data-it="Data" data-en="Date">Data</span>
+            <input id="date" name="date" type="date" required>
+          </label>
+          <label>
+            <span data-it="Orario" data-en="Time">Orario</span>
+            <select id="time" name="time" required disabled>
+              <option value="">Scegli prima una data</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          <span data-it="Nome e cognome" data-en="Full name">Nome e cognome</span>
+          <input name="name" type="text" autocomplete="name" maxlength="120" required>
+        </label>
+
+        <div class="form-columns">
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" maxlength="180" required>
+          </label>
+          <label>
+            <span data-it="Telefono" data-en="Phone">Telefono</span>
+            <input name="phone" type="tel" autocomplete="tel" maxlength="40" required>
+          </label>
+        </div>
+
+        <label>
+          <span data-it="Note o richieste" data-en="Notes or requests">Note o richieste</span>
+          <textarea name="notes" rows="4" maxlength="1000"></textarea>
+        </label>
+
+        <label class="privacy-row">
+          <input id="privacy" type="checkbox" required>
+          <span data-it="Acconsento all’utilizzo dei miei dati per gestire la prenotazione."
+                data-en="I consent to the use of my data to manage this booking.">
+            Acconsento all’utilizzo dei miei dati per gestire la prenotazione.
+          </span>
+        </label>
+
+        <button class="button button-accent button-full" type="submit"
+                data-it="Conferma prenotazione" data-en="Confirm booking">
+          Conferma prenotazione
+        </button>
+        <p id="form-message" class="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact-heading">
+        <p class="eyebrow eyebrow-dark">STUDIO MASSAGE LIMENA</p>
+        <h2 data-it="Allenati. Recupera. Riparti."
+            data-en="Train. Recover. Go again.">
+          Allenati. Recupera. Riparti.
+        </h2>
+      </div>
+
+      <div class="contact-grid">
+        <a href="https://maps.google.com/?q=Via+Piazza+Diaz+10+Limena" target="_blank" rel="noopener">
+          <small data-it="Indirizzo" data-en="Address">Indirizzo</small>
+          <strong>Via Piazza Diaz 10, Limena</strong>
+        </a>
+        <a href="tel:+393807666090">
+          <small data-it="Telefono" data-en="Phone">Telefono</small>
+          <strong>380 766 6090</strong>
+        </a>
+        <a href="mailto:studiomassagelimena@gmail.com">
+          <small>Email</small>
+          <strong>studiomassagelimena@gmail.com</strong>
+        </a>
+        <a href="https://instagram.com/studiomassage.limena" target="_blank" rel="noopener">
+          <small>Instagram</small>
+          <strong>@studiomassage.limena</strong>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/393807666090" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+
+  <footer>
+    <img src="/images/logo.png" alt="Studio Massage">
+    <span>© <span id="year"></span> Studio Massage · Limena</span>
+  </footer>
+</body>
+</html>
