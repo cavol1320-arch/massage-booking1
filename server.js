@@ -26,7 +26,15 @@ const SERVICES = Object.freeze([
   { id: "deep-30", nameIt: "Massaggio Decontratturante", nameEn: "Deep Tissue Massage", duration: 30, price: 30 },
   { id: "deep-50", nameIt: "Massaggio Decontratturante", nameEn: "Deep Tissue Massage", duration: 50, price: 50 },
   { id: "relax-30", nameIt: "Massaggio Rilassante", nameEn: "Relaxing Massage", duration: 30, price: 30 },
-  { id: "relax-50", nameIt: "Massaggio Rilassante", nameEn: "Relaxing Massage", duration: 50, price: 50 }
+  { id: "relax-50", nameIt: "Massaggio Rilassante", nameEn: "Relaxing Massage", duration: 50, price: 50 },
+
+  { id: "p4-sports", nameIt: "Massaggio Sportivo", nameEn: "Sports Massage", duration: 60, price: 0, packageNameIt: "Pacchetto 4 sedute", packageNameEn: "4-session package", packageTotalPrice: 150 },
+  { id: "p4-deep", nameIt: "Massaggio Decontratturante", nameEn: "Deep Tissue Massage", duration: 60, price: 0, packageNameIt: "Pacchetto 4 sedute", packageNameEn: "4-session package", packageTotalPrice: 150 },
+  { id: "p4-relax", nameIt: "Massaggio Rilassante", nameEn: "Relaxing Massage", duration: 60, price: 0, packageNameIt: "Pacchetto 4 sedute", packageNameEn: "4-session package", packageTotalPrice: 150 },
+
+  { id: "p3-sports", nameIt: "Massaggio Sportivo", nameEn: "Sports Massage", duration: 35, price: 0, packageNameIt: "Pacchetto 3 sedute", packageNameEn: "3-session package", packageTotalPrice: 90 },
+  { id: "p3-deep", nameIt: "Massaggio Decontratturante", nameEn: "Deep Tissue Massage", duration: 35, price: 0, packageNameIt: "Pacchetto 3 sedute", packageNameEn: "3-session package", packageTotalPrice: 90 },
+  { id: "p3-relax", nameIt: "Massaggio Rilassante", nameEn: "Relaxing Massage", duration: 35, price: 0, packageNameIt: "Pacchetto 3 sedute", packageNameEn: "3-session package", packageTotalPrice: 90 }
 ]);
 
 const WEEKDAY_SLOTS = Object.freeze([
@@ -80,6 +88,10 @@ async function initializeDatabase() {
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       UNIQUE (appointment_date, appointment_time)
     );
+      await pool.query(`
+    ALTER TABLE bookings
+    ADD COLUMN IF NOT EXISTS package_name VARCHAR(120),
+    ADD COLUMN IF NOT EXISTS package_total_price NUMERIC(8,2)
   `);
   await pool.query(`
     CREATE INDEX IF NOT EXISTS bookings_date_time_idx
@@ -220,19 +232,28 @@ app.post("/api/bookings", async (req, res, next) => {
     }
 
     const id = crypto.randomUUID();
-    const serviceName = language === "it" ? service.nameIt : service.nameEn;
 
-    await pool.query(
-      `INSERT INTO bookings (
-        id, service_id, service_name, duration_minutes, price_eur,
-        appointment_date, appointment_time, customer_name,
-        customer_email, customer_phone, notes
-      ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)`,
-      [
-        id, service.id, serviceName, service.duration, service.price,
-        date, time, name, email, phone, notes || null
-      ]
-    );
+const serviceName = language === "it" ? service.nameIt : service.nameEn;
+const packageName = service.packageNameIt
+  ? (language === "it" ? service.packageNameIt : service.packageNameEn)
+  : null;
+const packageTotalPrice = service.packageTotalPrice ?? null;
+
+await pool.query(
+  `INSERT INTO bookings (
+    id, service_id, service_name, duration_minutes, price_eur,
+    appointment_date, appointment_time, customer_name,
+    customer_email, customer_phone, notes,
+    package_name, package_total_price
+  ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)`,
+  [
+    id, service.id, serviceName, service.duration, service.price,
+    date, time, name, email, phone, notes || null,
+    packageName, packageTotalPrice
+  ]
+);
+
+    
 
     let notificationSent = false;
 
@@ -242,6 +263,8 @@ app.post("/api/bookings", async (req, res, next) => {
         service: serviceName,
         duration: service.duration,
         price: service.price,
+        packageName, 
+        packageTotalPrice,
         date,
         time,
         customerName: name,
@@ -300,6 +323,7 @@ app.get("/api/admin/bookings", requireAdmin, async (_req, res, next) => {
     const result = await pool.query(`
       SELECT
         id, service_name, duration_minutes, price_eur,
+        package_name, package_total_price,
         TO_CHAR(appointment_date, 'YYYY-MM-DD') AS appointment_date,
         TO_CHAR(appointment_time, 'HH24:MI') AS appointment_time,
         customer_name, customer_email, customer_phone,

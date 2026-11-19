@@ -38,20 +38,48 @@ function applyTranslations() {
   }
 }
 
+
 function renderServices() {
   const selectedValue = serviceSelect.value;
   serviceSelect.innerHTML = `<option value="">${text("Scegli trattamento e durata", "Choose treatment and duration")}</option>`;
 
-  services.forEach(service => {
-    const option = document.createElement("option");
-    option.value = service.id;
-    const serviceName = language === "it" ? service.nameIt : service.nameEn;
-    option.textContent = `${serviceName} — ${service.duration} min — €${service.price}`;
-    serviceSelect.appendChild(option);
-  });
+  const singles = services.filter(service => !service.packageNameIt);
+  const packages = services.filter(service => service.packageNameIt);
+
+  function addGroup(label, items, isPackage = false) {
+    if (!items.length) return;
+
+    const group = document.createElement("optgroup");
+    group.label = label;
+
+    items.forEach(service => {
+      const option = document.createElement("option");
+      option.value = service.id;
+
+      const name = language === "it" ? service.nameIt : service.nameEn;
+
+      if (isPackage) {
+        const packageName = language === "it"
+          ? service.packageNameIt
+          : service.packageNameEn;
+
+        option.textContent = `${packageName} — ${name} — ${service.duration} min — ${service.packageTotalPrice} € totali`;
+      } else {
+        option.textContent = `${name} — ${service.duration} min — €${service.price}`;
+      }
+
+      group.appendChild(option);
+    });
+
+    serviceSelect.appendChild(group);
+  }
+
+  addGroup(text("MASSAGGI SINGOLI", "SINGLE MASSAGES"), singles);
+  addGroup(text("PACCHETTI", "PACKAGES"), packages, true);
 
   serviceSelect.value = selectedValue;
 }
+
 
 async function loadServices() {
   const response = await fetch("/api/services");
