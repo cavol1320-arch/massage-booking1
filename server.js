@@ -93,7 +93,6 @@ async function initializeDatabase() {
     ADD COLUMN IF NOT EXISTS package_name VARCHAR(120),
     ADD COLUMN IF NOT EXISTS package_total_price NUMERIC(8,2)
   `);
-  `);
   await pool.query(`
     CREATE INDEX IF NOT EXISTS bookings_date_time_idx
     ON bookings (appointment_date, appointment_time);
