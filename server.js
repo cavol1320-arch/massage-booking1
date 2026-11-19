@@ -324,6 +324,7 @@ app.get("/api/admin/bookings", requireAdmin, async (_req, res, next) => {
     const result = await pool.query(`
       SELECT
         id, service_name, duration_minutes, price_eur,
+        package_name, package_total_price,
         TO_CHAR(appointment_date, 'YYYY-MM-DD') AS appointment_date,
         TO_CHAR(appointment_time, 'HH24:MI') AS appointment_time,
         customer_name, customer_email, customer_phone,
