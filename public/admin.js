@@ -46,8 +46,13 @@ async function loadBookings() {
         <a href="mailto:${escapeHtml(booking.customer_email)}">${escapeHtml(booking.customer_email)}</a><br>
         <a href="tel:${escapeHtml(booking.customer_phone)}">${escapeHtml(booking.customer_phone)}</a>
       </td>
-      <td>${escapeHtml(booking.service_name)}<br>${booking.duration_minutes} min · €${booking.price_eur}</td>
-      <td>${escapeHtml(booking.notes || "—")}</td>
+<td>
+  <strong>${escapeHtml(booking.service_name)}</strong><br>
+  ${booking.duration_minutes} min
+  ${booking.package_name
+    ? `<br><strong>${escapeHtml(booking.package_name)}</strong><br>Totale pacchetto: €${escapeHtml(booking.package_total_price)}`
+    : `<br>€${escapeHtml(booking.price_eur)}`}
+</td>  <td>${escapeHtml(booking.notes || "—")}</td>
       <td>
         <select data-id="${escapeHtml(booking.id)}">
           ${["confirmed", "completed", "cancelled"].map(status => `
