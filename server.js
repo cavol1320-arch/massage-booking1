@@ -87,7 +87,7 @@ async function initializeDatabase() {
       status VARCHAR(30) NOT NULL DEFAULT 'confirmed',
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       UNIQUE (appointment_date, appointment_time)
-    );
+    `);
       await pool.query(`
     ALTER TABLE bookings
     ADD COLUMN IF NOT EXISTS package_name VARCHAR(120),
