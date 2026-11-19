@@ -87,17 +87,25 @@ async function initializeDatabase() {
       status VARCHAR(30) NOT NULL DEFAULT 'confirmed',
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       UNIQUE (appointment_date, appointment_time)
-    `);
-      await pool.query(`
+    )
+  `);
+
+  await pool.query(`
     ALTER TABLE bookings
-    ADD COLUMN IF NOT EXISTS package_name VARCHAR(120),
+    ADD COLUMN IF NOT EXISTS package_name VARCHAR(120)
+  `);
+
+  await pool.query(`
+    ALTER TABLE bookings
     ADD COLUMN IF NOT EXISTS package_total_price NUMERIC(8,2)
   `);
+
   await pool.query(`
     CREATE INDEX IF NOT EXISTS bookings_date_time_idx
-    ON bookings (appointment_date, appointment_time);
+    ON bookings (appointment_date, appointment_time)
   `);
 }
+
 
 function clean(value, maxLength = 300) {
   return String(value ?? "").trim().slice(0, maxLength);
